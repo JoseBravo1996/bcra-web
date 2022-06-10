@@ -1,0 +1,36 @@
+.grid{
+    display: grid;
+    grid-gap: 16px;
+    padding: 16px;
+
+    @media (min-width: 768px){
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 960px){
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 1200px){
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+
+    .col{
+        // background-color: #e8e8e8;
+        color: white;
+        padding: 16px;
+    }
+}
+
+h6,
+h4,
+p
+{
+    text-align: center;
+}
+
+
+body{
+    background: #fff;
+}

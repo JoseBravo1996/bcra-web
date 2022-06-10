@@ -1,0 +1,31 @@
+<h3>
+    Reservas Internacionales
+</h3>
+<div class="grid" >
+    <div class="col bg-dark">
+        <h6>Último</h6>
+        <h4>{{reserva.v}}</h4>
+        <p>{{reserva.d}} : {{reserva.v}}</p>
+    </div>
+</div>
+<h3>
+    Base Monetaria
+</h3>
+<div class="grid" >
+    <div class="col bg-dark">
+        <h6>Último</h6>
+        <h4>{{baseMonetaria.v}}</h4>
+        <p>{{baseMonetaria.d}} : {{baseMonetaria.v}}</p>
+    </div>
+    <div class="col bg-dark">
+        <h6>Variación Anual</h6>
+        <h4>{{baseMonetariaInteranual.v | percent:'2.2-5'}}</h4>
+        <p>{{baseMonetariaInteranual.d}} : {{baseMonetariaInteranual.v}}</p>
+    </div>
+    <div class="col bg-dark">
+        <h6>Variación Anual</h6>
+        <h4>{{baseMonetariaInteranual.v | percent:'2.2-5'}}</h4>
+        <p>{{baseMonetariaInteranual.d}} : {{baseMonetariaInteranual.v}}</p>
+    </div>
+</div>
+
