@@ -3,43 +3,34 @@
         <div class="row my-3">
             <div class="col">
                 <h1 class="text-center">INFLACION</h1>
+                <p>La inflación consiste en un aumento continuado del nivel general de los precios de bienes y servicios
+                    en la economía de un sitio en concreto durante un tiempo determinado. </p>
             </div>
         </div>
         <div class="row my-2">
             <div class="col-md-6 py-1">
                 <div class="card">
                     <div class="card-body">
-                        <canvas id="canvas">{{chart}}</canvas>
+                        <p class="card-text">Inflación anual esperada vs oficial.</p>
+                        <canvas id="canvas2">{{chartInflacionInteranualEsperadaOficial}}</canvas>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 py-1">
                 <div class="card">
                     <div class="card-body">
+                        <p class="card-text">Inflación mensual oficial, ultimos 2 años.</p>
                         <canvas id="canvas1">{{chartInflacionMensualOficial}}</canvas>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row py-2">
-            <div class="col-md-4 py-1">
+            <div class="col py-1">
                 <div class="card">
                     <div class="card-body">
-                        <canvas id="chDonut1"></canvas>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 py-1">
-                <div class="card">
-                    <div class="card-body">
-                        <canvas id="chDonut2"></canvas>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 py-1">
-                <div class="card">
-                    <div class="card-body">
-                        <canvas id="chDonut3"></canvas>
+                        <p class="card-text">Inflación interanual mensual oficial, ultimos 6 años.</p>
+                        <canvas id="canvas">{{chart}}</canvas>
                     </div>
                 </div>
             </div>

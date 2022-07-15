@@ -4,12 +4,14 @@ import { HomeComponent } from './components/home/home.component';
 import { InfoComponent } from './components/info/info.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { DolarComponent } from './components/dolar/dolar.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'information', component: InfoComponent },
-  { path: 'statistics', component: StatisticsComponent },
-  { path: 'contact', component: ContactComponent }
+  { path: '', component: InfoComponent },
+  { path: 'inflacion', component: StatisticsComponent },
+  { path: 'dolar', component: DolarComponent },
+  { path: 'baseMonetaria', component: ContactComponent }
 ];
 
 @NgModule({

@@ -1,0 +1,53 @@
+<section class="course">
+    <div class="container">
+        <div class="row my-3">
+            <div class="col">
+                <h1 class="text-center">DOLAR</h1>
+                <p>El dólar oficial, también llamado dólar Banco Nación (porque el valor que informa este banco estatal
+                    es tradicionalmente el de referencia del mercado cambiario).</p>
+                <p>El dólar informal,tambien llamado dólar blue se consigue en el mercado negro o mercado paralelo. Este
+                    dólar no se compra en bancos o casas de cambio oficiales, sino que se comercializa en “cuevas” o los
+                    venden los tradicionales “arbolitos” en calles principales del microcentro.</p>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-md-6 py-1 centrado">
+                <div class="card border-secondary mb-3" style="max-width: 18rem;">
+                    <div class="card-header">DÓLAR BNA</div>
+                    <div class="card-body text-secondary">
+                        <h5 class="card-title">{{getCotizacionUSDOf.v | currency}}</h5>
+                        <p class="card-text">Actualizado: {{getCotizacionUSDOf.d | date:"dd/MM/yyyy"}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 py-1 centrado">
+                <div class="card border-secondary mb-3" style="max-width: 18rem;">
+                    <div class="card-header">DÓLAR INFORMAL</div>
+                    <div class="card-body text-secondary">
+                        <h5 class="card-title">{{getCotizacionUSD.v | currency}}</h5>
+                        <p class="card-text">Actualizado: {{getCotizacionUSD.d | date:"dd/MM/yyyy"}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="card-body">
+                <p class="card-text">Cotización dólar oficial año 2022.</p>
+                <canvas id="canvasUSDOf">{{chartCotizacionUSDOf}}</canvas>
+            </div>
+        </div>
+
+        <div class="row my-2">
+            <div class="card-body">
+                <p class="card-text">Cotización dólar informal años 2022.</p>
+                <canvas id="canvasUSD">{{chartCotizacionUSD}}</canvas>
+            </div>
+        </div>
+        <div class="row py-2">
+            <div class="card-body">
+                <p class="card-text">Evolución precio del dólar año 2022.</p>
+                <canvas id="canvasUSDOfvsUSD">{{chartCotizacionUSDvsUSDOf}}</canvas>
+            </div>
+        </div>
+    </div>
+</section>

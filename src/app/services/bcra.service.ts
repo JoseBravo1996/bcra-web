@@ -11,50 +11,49 @@ const URL = 'https://api.estadisticasbcra.com/';
 })
 export class BcraService {
 
+  private inflacionInteranualOficial: Inflacion[] = [];
+  private inflacionMensualOficial: Inflacion[] = [];
+  private inflacionInteranualEsperadaOficial: Inflacion[] = [];
+  private cotizacionUSD: Inflacion[] = [];
+  private cotizacionUSDOf: Inflacion[] = [];
+  private baseMonetaria: Inflacion[] = [];
+
   constructor(private http: HttpClient) { }
 
-  public getinflacionInteranualOficial(): Observable<Inflacion[]> {
+  public getinflacionInteranualOficial() {
     let url_ = URL + 'inflacion_interanual_oficial';
-    return this.http.get<Inflacion[]>(url_).pipe(map(res => {
-      return res.filter((item: any) =>
-        new Date(item.d) >= new Date('2010-01-01') && new Date(item.d) <= new Date()
-      );
-    }));
-  }
+    this.http.get<Inflacion[]>(url_).subscribe(res => this.inflacionInteranualOficial = res);
+  };
 
-  public getInflacionMensualOficial(): Observable<Inflacion[]> {
+  public getInflacionMensualOficial() {
     let url_ = URL + 'inflacion_mensual_oficial';
-    return this.http.get<Inflacion[]>(url_).pipe(map(res => {
-      return res.filter((item: any) =>
-        new Date(item.d) >= new Date('2021-01-01')
-      );
-    }));
+    this.http.get<Inflacion[]>(url_).subscribe(res => this.inflacionMensualOficial = res);
   }
 
-  public getBaseMonetaria(): Observable<Inflacion> {
+  public getInflacionMensualEsperadaOficial() {
+    let url_ = URL + 'inflacion_esperada_oficial';
+    this.http.get<Inflacion[]>(url_).subscribe(res => this.inflacionInteranualEsperadaOficial = res);
+  }
+
+  public getCotizacionUSD() {
+    let url_ = URL + 'usd';
+    this.http.get<Inflacion[]>(url_).subscribe(res => this.cotizacionUSD = res);
+  }
+
+  public getCotizacionUSDOf() {
+    let url_ = URL + 'usd_of';
+    this.http.get<Inflacion[]>(url_).subscribe(res => this.cotizacionUSDOf = res);
+  }
+
+  public getBaseMonetaria() {
     let url_ = URL + 'base';
-    let baseMonetaria;
-    return this.http.get<Inflacion[]>(url_).pipe(map(res => {
-      baseMonetaria = res[res.length - 1];
-      return baseMonetaria;
-    }));
+    return this.http.get<Inflacion[]>(url_);
   }
 
-  public getReservas(): Observable<Inflacion> {
-    let reserva;
-    let url_ = URL + 'reservas';
-    return this.http.get<Inflacion[]>(url_).pipe(map(res => {
-      reserva = res[res.length - 1];
-      return reserva;
-    }));
-  }
-
-  public getBaseMonetariaInteranual(): Observable<Inflacion> {
-    let reserva;
-    let url_ = URL + 'var_base_monetaria_interanual';
-    return this.http.get<Inflacion[]>(url_).pipe(map(res => {
-      reserva = res[res.length - 1];
-      return reserva;
-    }));
-  }
+  public buscarinflacionInteranualOficial = () => this.inflacionInteranualOficial;
+  public buscarinflacionMensualOficial = () => this.inflacionMensualOficial;
+  public buscarinflacionInteranualEsperadaOficial = () => this.inflacionInteranualEsperadaOficial;
+  public buscarcotizacionUSD = () => this.cotizacionUSD;
+  public buscarcotizacionUSDOf = () => this.cotizacionUSDOf;
+  public buscarBaseMonetaria = () => this.baseMonetaria;
 }

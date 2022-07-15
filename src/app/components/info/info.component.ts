@@ -14,17 +14,17 @@ export class InfoComponent implements OnInit {
   baseMonetariaInteranual!: Inflacion;
   data: Inflacion[] = [];
   constructor(private bcraService: BcraService) { 
-    this.bcraService.getReservas().subscribe(res => {
-      this.reserva = res
-    });
+    // this.bcraService.getReservas().subscribe(res => {
+    //   this.reserva = res
+    // });
 
-    this.bcraService.getBaseMonetaria().subscribe(res => {
-      this.baseMonetaria = res
-    });
+    // this.bcraService.getBaseMonetaria().subscribe(res => {
+    //   this.baseMonetaria = res
+    // });
 
-    this.bcraService.getBaseMonetariaInteranual().subscribe(res => {
-      this.baseMonetariaInteranual = res
-    });
+    // this.bcraService.getBaseMonetariaInteranual().subscribe(res => {
+    //   this.baseMonetariaInteranual = res
+    // });
   }
 
   ngOnInit(): void {

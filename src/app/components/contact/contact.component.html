@@ -1,1 +1,34 @@
-<p>contact works!</p>
+<section class="course">
+    <div class="container">
+        <div class="row my-3">
+            <div class="col">
+                <h1 class="text-center">BASE MONETARIA</h1>
+                <p>La Base Monetaria está constituida por el dinero legal en circulación (billetes
+                    y monedas),
+                    más las reservas de bancos en el banco central. La base monetaria es controlada por el banco
+                    central y
+                    constituye su principal vía para controlar la oferta monetaria. Otra vía para definir la base
+                    monetaria es
+                    que constituyen los pasivos monetarios del banco central</p>
+            </div>
+        </div>
+        <!-- <div class="row my-2" *ngIf="getBaseMonetaria">
+            <div class="col-md-6 py-1 centrado">
+                <div class="card border-secondary mb-3" style="max-width: 18rem;">
+                    <div class="card-header">BASE MONETARIA </div>
+                    <div class="card-body text-secondary">
+                        <h5 class="card-title">var. mensual real. {{getBaseMonetaria.v |  floor: 2}}</h5>
+                        <p class="card-text">Actualizado: {{getBaseMonetaria.d | date:"dd/MM/yyyy"}}</p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="row py-2">
+            <div class="card-body">
+                <p class="card-text">Evolución base monetaria Julio 2022.</p>
+                <canvas id="canvas10">{{chartInflacionMensualOficial}}</canvas>
+            </div>
+        </div>
+    </div>
+
+</section>
